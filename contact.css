@@ -1,0 +1,594 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    color: #333;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* --- HEADER --- */
+.header-contact {
+    background-color: white;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    z-index: 10;
+    position: sticky;
+    top: 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    height: 70px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.img-logo {
+    height: 50px;
+    width: auto;
+    transition: transform 0.2s ease;
+}
+
+.img-logo:hover {
+    transform: scale(1.03);
+}
+
+.main-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #558B2F;
+}
+
+.icons-box {
+    display: flex;
+    gap: 12px;
+}
+
+.icon-top {
+    height: 48px;
+    width: auto;
+    transition: transform 0.2s ease;
+}
+
+.icon-top:hover {
+    transform: scale(1.1);
+}
+
+/* --- SECTION HERO CONTACT --- */
+.contact-hero {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - 70px);
+    background-image: url('imagefondcontact.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    color: white;
+    overflow: hidden;
+}
+
+/* Le filtre sombre par-dessus l'image */
+.dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+/* Le conteneur principal */
+.contact-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+/* --- VISIBILITY HELPERS --- */
+.mobile-only {
+    display: none !important;
+}
+
+.desktop-only {
+    display: block !important;
+}
+
+/* --- COLONNE GAUCHE (DESKTOP) --- */
+.contact-info-left {
+    flex: 1;
+    text-align: left;
+}
+
+/* Nom Pierre Sened */
+.handwritten-name {
+    font-family: 'Chewy', cursive;
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 8px;
+}
+
+.job-title {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 35px;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* Liste infos (tél, mail...) */
+.info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.icon-green {
+    color: #76c946;
+    font-size: 1.3rem;
+    width: 30px;
+    margin-right: 15px;
+}
+
+/* --- COLONNE DROITE --- */
+.contact-branding-right {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Logo blanc filtré */
+.logo-white-filter {
+    height: 130px;
+    margin-bottom: 25px;
+    filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+/* Grille Carte / Promo */
+.details-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+}
+
+.map-area p {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.idf-map {
+    width: 120px;
+    height: auto;
+}
+
+.promo-area {
+    text-align: center;
+}
+
+.handwritten-promo {
+    font-family: 'Chewy', cursive;
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+}
+
+.handwritten-promo.big {
+    font-size: 2.2rem;
+    line-height: 1.1;
+}
+
+/* --- FOOTER RESEAUX SOCIAUX --- */
+.social-footer {
+    position: relative;
+    z-index: 2;
+    margin-top: 50px;
+    display: flex;
+    gap: 25px;
+}
+
+.social-footer a {
+    color: white;
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+}
+
+.social-footer a:hover {
+    color: #76c946;
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-3px);
+}
+
+/* ========================================
+   RESPONSIVE - TABLETTE (max-width: 1024px)
+   ======================================== */
+@media (max-width: 1024px) {
+    .contact-container {
+        max-width: 850px;
+        gap: 40px;
+    }
+    
+    .handwritten-name {
+        font-size: 3rem;
+    }
+    
+    .logo-white-filter {
+        height: 110px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE (max-width: 768px)
+   ======================================== */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .header-content {
+        padding: 0 15px;
+        height: 65px;
+    }
+    
+    .main-title {
+        font-size: 1.4rem;
+    }
+    
+    .img-logo {
+        height: 42px;
+    }
+    
+    .icon-top {
+        height: 40px;
+    }
+    
+    .contact-hero {
+        padding: 25px 15px;
+        min-height: calc(100vh - 65px);
+        height: auto;
+    }
+    
+    .contact-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        width: 100%;
+    }
+    
+    /* Visibility toggle for mobile */
+    .mobile-only {
+        display: flex !important;
+    }
+    
+    .desktop-only {
+        display: none !important;
+    }
+    
+    /* --- MOBILE CONTACT TABLE --- */
+    .contact-table {
+        width: 100%;
+        max-width: 400px;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        flex-direction: column;
+    }
+    
+    .table-header {
+        background: linear-gradient(135deg, #3a6b35 0%, #4a7c4f 100%);
+        padding: 25px 20px;
+        text-align: center;
+    }
+    
+    .table-header .handwritten-name {
+        font-size: 2.2rem;
+        color: white;
+        margin-bottom: 5px;
+    }
+    
+    .table-header .job-title {
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 0;
+        font-size: 1rem;
+    }
+    
+    .table-body {
+        padding: 10px;
+    }
+    
+    .table-row {
+        display: flex;
+        align-items: center;
+        padding: 18px 15px;
+        margin-bottom: 8px;
+        background: #f8f9fa;
+        border-radius: 14px;
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+    }
+    
+    .table-row:last-child {
+        margin-bottom: 0;
+    }
+    
+    .table-row:not(.no-link):active {
+        transform: scale(0.98);
+        background: #e8f5e9;
+        border-color: #4CAF50;
+    }
+    
+    .row-icon {
+        width: 45px;
+        height: 45px;
+        background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-right: 15px;
+    }
+    
+    .row-icon i {
+        color: white;
+        font-size: 1.2rem;
+    }
+    
+    .row-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+    
+    .row-label {
+        font-size: 0.8rem;
+        color: #888;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 3px;
+    }
+    
+    .row-value {
+        font-size: 1rem;
+        color: #333;
+        font-weight: 600;
+    }
+    
+    .row-arrow {
+        color: #4CAF50;
+        font-size: 0.9rem;
+        margin-left: 10px;
+    }
+    
+    .table-row.no-link .row-arrow {
+        display: none;
+    }
+    
+    .table-footer {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        padding: 15px 20px 20px;
+        background: #f8f9fa;
+    }
+    
+    .promo-badge {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 15px;
+        background: white;
+        border-radius: 25px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #555;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .promo-badge i {
+        color: #4CAF50;
+        font-size: 1rem;
+    }
+    
+    .promo-badge.highlight {
+        background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+        color: white;
+    }
+    
+    .promo-badge.highlight i {
+        color: white;
+    }
+    
+    /* Branding right section on mobile */
+    .contact-branding-right {
+        width: 100%;
+    }
+    
+    .logo-white-filter {
+        height: 80px;
+        margin-bottom: 15px;
+    }
+    
+    .details-grid {
+        flex-direction: row;
+        gap: 20px;
+    }
+    
+    .map-area p {
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+    }
+    
+    .idf-map {
+        width: 80px;
+    }
+    
+    .social-footer {
+        margin-top: 25px;
+        gap: 15px;
+    }
+    
+    .social-footer a {
+        font-size: 1.3rem;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - PETIT MOBILE (max-width: 480px)
+   ======================================== */
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 1.2rem;
+    }
+    
+    .img-logo {
+        height: 36px;
+    }
+    
+    .icon-top {
+        height: 34px;
+    }
+    
+    .contact-hero {
+        padding: 20px 12px;
+    }
+    
+    .table-header {
+        padding: 20px 15px;
+    }
+    
+    .table-header .handwritten-name {
+        font-size: 1.9rem;
+    }
+    
+    .table-row {
+        padding: 15px 12px;
+    }
+    
+    .row-icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 12px;
+    }
+    
+    .row-value {
+        font-size: 0.95rem;
+    }
+    
+    .table-footer {
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px 15px 15px;
+    }
+    
+    .promo-badge {
+        justify-content: center;
+        padding: 12px 15px;
+    }
+    
+    .logo-white-filter {
+        height: 70px;
+    }
+    
+    .idf-map {
+        width: 70px;
+    }
+}
+
+/* ========================================
+   MODE PAYSAGE (orientation: landscape)
+   ======================================== */
+@media (max-height: 500px) and (orientation: landscape) {
+    .header-content {
+        height: 55px;
+    }
+    
+    .contact-hero {
+        min-height: calc(100vh - 55px);
+        padding: 20px 25px;
+    }
+    
+    .contact-container {
+        flex-direction: row;
+        gap: 30px;
+    }
+    
+    /* Show desktop, hide mobile in landscape */
+    .mobile-only {
+        display: none !important;
+    }
+    
+    .desktop-only {
+        display: block !important;
+    }
+    
+    .handwritten-name {
+        font-size: 2.2rem;
+    }
+    
+    .job-title {
+        margin-bottom: 20px;
+    }
+    
+    .logo-white-filter {
+        height: 80px;
+        margin-bottom: 15px;
+    }
+    
+    .details-grid {
+        flex-direction: row;
+        gap: 25px;
+    }
+    
+    .social-footer {
+        margin-top: 20px;
+    }
+}
