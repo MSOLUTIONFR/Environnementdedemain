@@ -1,0 +1,195 @@
+/* --- RESET & GLOBAL --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Utilisation de ta police */
+    color: #333;
+    background-color: #fff;
+    line-height: 1.6;
+}
+
+/* --- HEADER (Adapté de ton modèle) --- */
+.main-header {
+    background-color: white;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Espace entre les 3 éléments */
+    align-items: center;
+    padding: 0 40px;
+    height: 80px; /* Hauteur fixe pour l'entête */
+}
+
+/* Gestion des images dans le header */
+.header-logo {
+    height: 60px; /* Ajuste selon la taille de ton logo */
+    width: auto;
+}
+
+.icon-btn {
+    height: 64px; /* Taille des icônes téléphones/loc */
+    width: auto;
+    margin-left: 15px;
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.icon-btn:hover {
+    transform: scale(1.1);
+}
+
+.page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #558B2F; /* Vert Olive */
+    text-transform: capitalize;
+    text-align: center;
+    flex-grow: 1; /* Permet au titre de prendre la place centrale */
+}
+
+/* --- SECTION PRINCIPALE (Split Screen) --- */
+.split-section {
+    display: flex;
+    min-height: calc(100vh - 80px); /* 100% de l'écran moins la hauteur du header */
+}
+
+/* COLONNE GAUCHE (Texte) */
+.text-column {
+    flex: 1; /* 50% de largeur */
+    padding: 60px;
+    display: flex;
+    align-items: center; /* Centre le texte verticalement */
+    position: relative; /* Pour le filigrane */
+    overflow: hidden; /* Coupe le filigrane qui dépasse */
+}
+
+/* LE FILIGRANE (L'image transparente derrière) */
+.watermark-container::before {
+    content: '';
+    position: absolute;
+    z-index: -1; /* Derrière le texte */
+    
+    /* ICI : On utilise ton image de logo principale pour le fond */
+    background-image: url('LogoPrincipal.png'); 
+    
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: contain;
+    
+    /* Position et taille du filigrane */
+    width: 90%; 
+    height: 90%;
+    left: -20%; /* Décalé vers la gauche comme sur la maquette */
+    top: 5%;
+    
+    opacity: 0.08; /* Très transparent */
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 2; /* Devant le filigrane */
+    max-width: 600px;
+}
+
+.text-column h2 {
+    font-size: 1.8rem;
+    color: #006400; /* Vert foncé */
+    margin-bottom: 20px;
+    line-height: 1.3;
+    font-weight: 500;
+}
+
+.text-column h2 .highlight {
+    font-weight: 800; /* Partie grasse */
+    display: block; /* Force le retour à la ligne si besoin */
+}
+
+.text-column p {
+    font-size: 1rem;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    text-align: justify;
+}
+
+/* LE BOUTON */
+.btn-primary {
+    display: inline-block;
+    background-color: #4a7c4f; /* Vert bouton */
+    color: white;
+    text-decoration: none;
+    padding: 12px 35px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-primary:hover {
+    background-color: #365e3b;
+}
+
+/* COLONNE DROITE (Image Jardinier) */
+.image-column {
+    flex: 1; /* 50% de largeur */
+    position: relative;
+}
+
+.image-column img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Remplit tout l'espace sans déformation */
+    display: block;
+}
+
+/* --- RESPONSIVE (Mobile & Tablette) --- */
+@media (max-width: 900px) {
+    
+    /* Header Mobile */
+    .header-container {
+        padding: 0 20px;
+    }
+    
+    .page-title {
+        font-size: 1.4rem; /* Titre plus petit */
+    }
+
+    .header-logo {
+        height: 45px;
+    }
+
+    .icon-btn {
+        height: 28px;
+        margin-left: 10px;
+    }
+
+    /* Section Mobile */
+    .split-section {
+        flex-direction: column; /* Empile le texte et l'image */
+        height: auto; /* Hauteur automatique */
+    }
+
+    .text-column {
+        padding: 40px 25px;
+        order: 1; /* Le texte en premier (ou 2 si tu veux l'image avant) */
+    }
+
+    .image-column {
+        height: 300px; /* Hauteur fixe pour l'image sur mobile */
+        order: 2;
+    }
+    
+    /* Ajustement filigrane mobile */
+    .watermark-container::before {
+        left: -10%;
+        width: 80%;
+        opacity: 0.05;
+    }
+}

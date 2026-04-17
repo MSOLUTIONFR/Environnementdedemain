@@ -1,0 +1,205 @@
+
+:root {
+    --main-green: #3a6b35;
+    --button-green: #7ead57;
+    --white: #ffffff;
+    --grey-border: #e0e0e0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; 
+    background-color: var(--white);
+    padding-top: 95px; 
+    padding-bottom: 0;
+}
+header {
+    background-color: var(--white);
+    border-bottom: 1px solid var(--grey-border);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 93px;
+    padding: 0 15px;
+}
+
+header h1 {
+    color: var(--main-green);
+    font-size: 2.5rem; 
+    font-weight: 700;
+}
+@media (max-width: 400px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+}
+.icon-img {
+    height: 50px; 
+    width: auto;
+}
+.header-icons {
+    display: flex;
+    gap: 15px;
+}
+.hero-section {
+    height: calc(100vh - 95px); 
+    min-height: 450px;
+    background-image: url('Imagejardin.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; 
+}
+.hero-logo {
+    width: 100%;
+    max-width: 863px; 
+    height: auto;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+.cta-button {
+    background-color: var(--white);
+    color: #333;
+    padding: 14px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+}
+.cta-button:hover {
+    transform: scale(1.03);
+}
+footer {
+    background-color: transparent; 
+    border-top: none; 
+    position: fixed;
+    bottom: 20px; 
+    width: 100%; 
+    padding: 0px 150px;
+    z-index: 1000;
+    animation: slideInFromBottom 2.0s ease-out;
+}
+.footer-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.nav-button {
+    color: var(--white);
+    text-align: center;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    padding: 15px 10px 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    min-height: auto;
+    transition: opacity 0.2s ease-in-out, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+.btn-services { background-color: var(--main-green, #3a6b35); }
+.btn-contacts { background-color: var(--button-green, #7ead57); }
+.btn-reseaux { background-color: #5f9ea0; }
+
+.nav-button:hover {
+    opacity: 0.9; 
+    transform: translateY(-3px);
+}
+.nav-button img {
+    height: 40px;
+    width: auto;
+    margin-top: auto;
+
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+@media (max-width: 768px) {
+
+    footer {
+        padding: 0 10px; 
+        bottom: 10px;
+        width: 100%;
+    }
+
+    .footer-nav {
+        gap: 8px; 
+    }
+
+    .nav-button {
+        font-size: 0.75rem;
+        padding: 10px 5px 0 5px;
+        border-radius: 15px;
+        gap: 5px;
+    }
+
+    .nav-button span {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .nav-button img {
+        height: 28px;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+    
+    footer {
+        padding: 0 20px;
+        bottom: 5px;
+    }
+    
+    /* En mode paysage, ils sont côte à côte, donc l'image ne doit pas être "en bas" */
+    .nav-button {
+        flex-direction: row;
+        padding: 8px 15px; /* On remet du padding normal */
+        font-size: 0.85rem;
+        align-items: center; /* On recentre verticalement */
+    }
+
+    .nav-button img {
+        height: 20px;
+        margin-top: 0; /* On annule l'effet "pousser en bas" */
+        border-radius: 0; /* On annule l'arrondi spécifique */
+    }
+    
+    .footer-nav {
+        gap: 15px;
+    }
+}
+
+/* Animation */
+@keyframes slideInFromBottom {
+  0% { transform: translateY(100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}

@@ -1,0 +1,147 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fcfcfc; /* Fond très légèrement gris/blanc */
+    color: #333;
+    overflow-x: hidden; /* Empêche le scroll horizontal à cause du décor */
+}
+
+/* --- HEADER --- */
+.header-services {
+    background-color: white;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    height: 70px;
+}
+
+.img-logo { height: 50px; width: auto; }
+
+.main-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #558B2F; /* Vert Olive */
+    text-transform: none; /* Pas de majuscule forcée ici */
+}
+
+.icons-box { display: flex; gap: 15px; }
+.icon-top { height: 35px; cursor: pointer; transition: transform 0.2s; }
+.icon-top:hover { transform: scale(1.1); }
+
+
+/* --- SECTION SERVICES --- */
+.services-container {
+    position: relative; /* Référence pour le décor */
+    padding: 50px 20px 100px; /* Padding bas important pour le bouton */
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* GRILLE DES CARTES */
+.cards-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 10; /* Au-dessus du décor */
+    flex-wrap: wrap; /* Permet le passage à la ligne sur mobile */
+}
+
+/* STYLE DES CARTES INDIVIDUELLES */
+.card {
+    position: relative;
+    width: 322px;
+    height: 627px;
+    overflow: hidden;
+    /* Pas de border-radius sur l'image fournie, mais on peut en mettre un petit */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05); /* Zoom léger au survol */
+}
+
+/* TEXTE SUR L'IMAGE (Entretien, Création...) */
+.card-text {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    /* Ombre portée pour lisibilité (outline effect) */
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+/* --- DÉCORATION ARBRE (BAS DROITE) --- */
+.deco-tree {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 500px; /* Taille du décor */
+    height: 500px;
+    z-index: 1; /* Derrière les cartes */
+    pointer-events: none; /* On peut cliquer à travers */
+    
+    /* Image de fond */
+    background-image: url('LogoPrincipal.png');
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: contain;
+    
+    /* Optionnel : Transparence légère si ton logo est trop foncé */
+    /* opacity: 0.8; */ 
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 900px) {
+    .header-content {
+        padding: 0 15px;
+    }
+    
+    .main-title {
+        font-size: 1.5rem; /* Titre plus petit */
+    }
+
+    .cards-grid {
+        flex-direction: column; /* Cartes les unes sous les autres */
+        gap: 20px;
+    }
+    
+    .card {
+        width: 100%;
+        max-width: 320px; /* Largeur max sur mobile */
+        height: 250px; /* Moins haut sur mobile */
+    }
+
+    .deco-tree {
+        width: 250px;
+        height: 250px;
+        opacity: 0.3; /* Plus discret sur mobile */
+    }
+}
