@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #fcfcfc;
+    background-color: #f0f8ed;
     color: #333;
     line-height: 1.6;
 }
@@ -22,10 +22,15 @@ body {
 
 .header-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding: 0 40px;
     height: 80px;
+    gap: 30px;
+}
+
+.logo-box {
+    flex-shrink: 0;
 }
 
 .header-logo {
@@ -37,13 +42,8 @@ body {
     font-size: 2rem;
     font-weight: 700;
     color: #558B2F;
-    text-align: center;
-    flex-grow: 1;
-}
-
-.header-icons {
-    display: flex;
-    gap: 15px;
+    margin: 0;
+    flex: 1;
 }
 
 .icon-btn {
@@ -51,6 +51,7 @@ body {
     width: auto;
     transition: transform 0.2s;
     cursor: pointer;
+    flex-shrink: 0;
 }
 
 .icon-btn:hover {
@@ -75,7 +76,7 @@ body {
     object-fit: cover;
     object-position: center;
     display: block;
-    transition: transform 0.6s ease;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .service-hero:hover .service-image {

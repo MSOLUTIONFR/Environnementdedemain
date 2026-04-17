@@ -12,11 +12,17 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Poppins', sans-serif; 
-    background-color: var(--white);
+    background-color: #f0f8ed;
     padding-top: 95px; 
     padding-bottom: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 header {
     background-color: var(--white);
@@ -48,6 +54,11 @@ header h1 {
 .icon-img {
     height: 50px; 
     width: auto;
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-img:hover {
+    transform: scale(1.05);
 }
 .header-icons {
     display: flex;
@@ -85,10 +96,13 @@ header h1 {
     font-size: 1.1rem;
     font-weight: 700;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    transition: transform 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, box-shadow;
+    display: inline-block;
 }
 .cta-button:hover {
-    transform: scale(1.03);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
 }
 footer {
     background-color: transparent; 
@@ -120,17 +134,19 @@ footer {
     align-items: center;
     gap: 8px;
     min-height: auto;
-    transition: opacity 0.2s ease-in-out, transform 0.2s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     overflow: hidden;
+    will-change: transform, box-shadow, background-color;
 }
 .btn-services { background-color: var(--main-green, #3a6b35); }
 .btn-contacts { background-color: var(--button-green, #7ead57); }
 .btn-reseaux { background-color: #5f9ea0; }
 
 .nav-button:hover {
-    opacity: 0.9; 
-    transform: translateY(-3px);
+    opacity: 0.95;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.25);
 }
 .nav-button img {
     height: 40px;

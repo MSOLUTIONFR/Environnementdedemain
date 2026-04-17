@@ -11,7 +11,7 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #fff;
+    background-color: #f0f8ed;
     color: #333;
     overflow-x: hidden;
     min-height: 100vh;
@@ -30,12 +30,17 @@ body {
 
 .header-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding: 0 30px;
     height: 70px;
+    gap: 30px;
     max-width: 1400px;
     margin: 0 auto;
+}
+
+.logo-box {
+    flex-shrink: 0;
 }
 
 .img-logo {
@@ -52,17 +57,15 @@ body {
     font-size: 1.8rem;
     font-weight: 700;
     color: #558B2F;
-}
-
-.icons-box {
-    display: flex;
-    gap: 12px;
+    margin: 0;
+    flex: 1;
 }
 
 .icon-top {
     height: 48px;
     width: auto;
     transition: transform 0.2s ease;
+    flex-shrink: 0;
 }
 
 .icon-top:hover {
